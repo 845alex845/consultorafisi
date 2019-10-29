@@ -1,0 +1,17 @@
+{
+    "name": "unmsm.fisi/proyecto",
+    "description": "Proyecto desarrollado para el curso de Base de Datos 2",
+    "type": "project",
+    "require": {
+        
+        "dompdf/dompdf": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex",
+            "email": "rommel.rojas@unmsm.edu.pe"
+        }
+    ],
+    "minimum-stability": "dev"
+}
