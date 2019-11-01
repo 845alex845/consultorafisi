@@ -6,7 +6,7 @@ class AccesoBD{
 
     }
     public function getConnection(){
-        $connection = oci_connect($usuario,$password);
+        $connection = oci_connect('consultora','consultora');
         return $connection;
     }
     public function bind($parametro,$valor,$tipo =null){

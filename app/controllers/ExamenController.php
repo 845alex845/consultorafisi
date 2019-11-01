@@ -2,7 +2,7 @@
 include_once('../app/model/Docente.php');
 include_once("../app/service/DocenteService.php");
 
-Class HomeController extends Controller{
+Class ExamenController extends Controller{
 	public function __construct(){
 		//echo 'controlador paginas se ha cargado';
 	
@@ -13,7 +13,7 @@ Class HomeController extends Controller{
 		$datos =[
 			'titulo' => 'Bienvenidos a mi webMVC'
 		];
-		$this->vista('paginas/home',$datos);
+		$this->vista('paginas/formulario',$datos);
 	}
 	public function login(){
 
