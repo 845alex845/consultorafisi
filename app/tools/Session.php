@@ -3,6 +3,7 @@ class Session{
     private function __construct(){}
 
     static function init(){
+        //inicia sesion, si existe lo reinicia
         if(!isset($_SESSION)){
             session_start();
         }
@@ -13,6 +14,7 @@ class Session{
     }
 
     static function add($key,$value){
+        //agrega un valor a mi sesion clave
         $_SESSION[$key]=$value;
     }
 

@@ -14,17 +14,19 @@ class Controller{
 	public function vista($vista, $datos =[]){
 
 		//Session::init(); //iniciamos una sesion- contiene al session_star()
-		
-			//|| empty(Session::get('username'))
-			//si no hay
 		//chequeamos si el archivo vista existe
+	/*	if(!(Session::getStatus()==1)||empty(Session::get('docente'))){*/
 			if(file_exists('../app/view/' .$vista . '.php')){
-				require_once '../app/view/' .$vista . '.php';//abro la vista login
+				require_once '../app/view/' .$vista . '.php';
 			}
 			else{
 				//si el archivo de la vista no existe
 				die('la vista no existe');
-			}
+			}/*
+		}else{
+			
+			die('NO PUEDE INGRESAR SIN HABERTE LOGUEADO');
+		}*/
 		
 
 	}

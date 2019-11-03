@@ -13,7 +13,7 @@ Class ExamenController extends Controller{
 		$datos =[
 			'titulo' => 'Bienvenidos a mi webMVC'
 		];
-		$this->vista('paginas/formulario',$datos);
+		$this->vista('paginas/evaluaciones',$datos);
 	}
 	public function login(){
 

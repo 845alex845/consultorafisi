@@ -7,8 +7,8 @@ class DocenteDAO{
     private $db;
 
     public function __construct(){
-        $this->db= AccesoBD::getConnection();
-        $this->collection=$db->Docente;//llama Docente
+       // $this->db= AccesoBD::getConnection();
+        //$this->collection=$db->Docente;//llama Docente
     }
     public function readAll(){
         $sql="SELECT * FROM DOCENTE";
@@ -17,12 +17,16 @@ class DocenteDAO{
         return $resultados;
     }
     public function read($codigo){
-            $sql="SELECT * FROM docente WHERE Cod_docente =:codigo";
+        $db=oci_connect("consultora","consultora");
+            $sql="SELECT COD_DOCENTE FROM docente WHERE Cod_docente =$codigo";
             $prepare=oci_parse($db,$sql);
-            $fila=oci_execute($prepare);
-            //$fila =oci_fetch_asocc($prepare);//almacena toda los registros
-            //retorna una sola fila
+            oci_execute($prepare);
+            $fila=oci_fetch_asocc($prepare);
             return $fila;
+          /* while( ($fila=oci_fetch_asocc($prepare))!=false){
+               return $fila;
+           }*/
+
     }
     public function __destruct(){}
 }

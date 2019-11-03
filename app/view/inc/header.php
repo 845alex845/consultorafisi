@@ -1,6 +1,11 @@
+<?php 
+session_start();
+if(!isset($_SESSION["usuario"])){
+  header("Location: login3.php ");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -8,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>Gentelella Alela! </title>
 
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,9 +21,10 @@
     <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
-    
+    <!-- iCheck -->
+    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <!-- Custom styling plus plugins -->
-    <link href="css/custom.min.css" rel="stylesheet">
+    <link href="build/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -39,7 +45,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>John Doe(<?php echo $_SESSION['usuario'];?>)</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -67,6 +73,7 @@
                       <li><a href="ExamenController">Examenes</a></li>
                     </ul>
                   </li>   
+
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>

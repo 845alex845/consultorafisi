@@ -10,9 +10,9 @@ Class Core{
 protected  $controladorActual ='LoginController';
 protected $metodoActual= 'index';
 protected $parametros =[];
+
 public function __construct(){
 	$url = $this->getUrl();
-	//print_r($this->getUrl());
 	//buscar en controladores si el controlador existe
 	if(file_exists('../app/controllers/' . ucwords($url[0]) .'.php')){
 //si existe se setea como controlador por defecto
