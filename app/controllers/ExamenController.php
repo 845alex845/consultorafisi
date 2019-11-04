@@ -5,7 +5,7 @@ include_once("../app/service/DocenteService.php");
 Class ExamenController extends Controller{
 	public function __construct(){
 		//echo 'controlador paginas se ha cargado';
-	
+		$this->vista('paginas/examen');
 	}
 	public function index(){
 		//todo controlador debe cargar un metodo index
@@ -13,7 +13,7 @@ Class ExamenController extends Controller{
 		$datos =[
 			'titulo' => 'Bienvenidos a mi webMVC'
 		];
-		$this->vista('paginas/evaluaciones',$datos);
+	//	$this->vista('paginas/evaluaciones',$datos);
 	}
 	public function login(){
 

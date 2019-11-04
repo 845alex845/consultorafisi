@@ -2,7 +2,8 @@
 
 Class TemasController extends Controller{
 	public function __construct(){
-		//echo 'controlador paginas se ha cargado';
+		//$this->temaModelo;
+		$this->vista('paginas/temas');
 	
 	}
 	public function index(){
@@ -11,7 +12,7 @@ Class TemasController extends Controller{
 		$datos =[
 			'titulo' => 'Bienvenidos a mi webMVC'
 		];
-		$this->vista('paginas/temas',$datos);//paginas es la carpeta de view
+		//$this->vista('paginas/temas',$datos);//paginas es la carpeta de view
 	}
 	public function login(){
 

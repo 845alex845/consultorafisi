@@ -1,6 +1,7 @@
 <?php 
 session_start();
-if(!isset($_SESSION["usuario"])){
+$iduser=$_SESSION["usuario"];
+if(!isset($iduser)){
   header("Location: login3.php ");
 }
 ?>
@@ -45,7 +46,7 @@ if(!isset($_SESSION["usuario"])){
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe(<?php echo $_SESSION['usuario'];?>)</h2>
+                <h2>John Doe(<?php echo $iduser;?>)</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -72,8 +73,7 @@ if(!isset($_SESSION["usuario"])){
                     <ul class="nav child_menu">
                       <li><a href="ExamenController">Examenes</a></li>
                     </ul>
-                  </li>   
-
+                  </li>     
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>

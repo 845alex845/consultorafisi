@@ -54,7 +54,7 @@
 $cnn=oci_connect("consultora","consultora");
 //FALTA COLOCAR EL COD_DOCENTE GENERAL , SOLO LEE 21700 POR AHORA
 $sql="SELECT c.cod_curso as COD_CURSO,c.nom_curso as mis_cursos from docente  d join docente_curso  
-dc on dc.COD_DOCENTE=d.COD_DOCENTE join curso c on c.COD_CURSO=dc.COD_CURSO where dc.cod_docente=21700";
+dc on dc.COD_DOCENTE=d.COD_DOCENTE join curso c on c.COD_CURSO=dc.COD_CURSO where dc.cod_docente=$iduser";
 $unir=oci_parse($cnn,$sql);
 oci_execute($unir);
 while (($scar = oci_fetch_assoc($unir)) != false) {
@@ -65,7 +65,7 @@ while (($scar = oci_fetch_assoc($unir)) != false) {
                           echo "         <img style='width: 100%; display: block;' src='images/media.jpg' alt='image' />";
                                     echo "<div class='mask no-caption'>";
                                       echo "<div class='tools tools-bottom'>";
-                               echo "<a href='TemasController/index/".$scar['COD_CURSO']."' ><i class='fa fa-link'></i></a> ";
+                               echo "<a href='TemasController' ><i class='fa fa-link'></i></a> ";
                                echo "<a href='#'><i class='fa fa-pencil'></i></a>"; 
                                echo "<a href='#'><i class='fa fa-times'></i></a>";
                                echo "       </div>
