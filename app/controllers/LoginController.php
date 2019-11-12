@@ -16,7 +16,7 @@ class LoginController extends Controller{
             $pass=$_POST['password']; 
             $conn=oci_connect("consultora","consultora");
            
-            $sql="SELECT * FROM docente  WHERE cod_docente=$user and clave='$pass'";
+            $sql="SELECT * FROM usuario WHERE codigo=$user and clave='$pass'";
             $prepare=oci_parse($conn,$sql);
             oci_execute($prepare);
             $filas=oci_fetch_assoc($prepare);

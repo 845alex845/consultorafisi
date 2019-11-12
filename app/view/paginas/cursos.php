@@ -5,15 +5,15 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3> Media Gallery <small> gallery design</small> </h3>
+                <h3> Mis Cursos de <?php echo $iduser ?> </h3>
               </div>
 
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
+                    <input type="text" class="form-control" placeholder="Buscar...">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
+                        <button class="btn btn-default" type="button">Ir</button>
                     </span>
                   </div>
                 </div>
@@ -26,7 +26,7 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Media Gallery <small> gallery design </small></h2>
+                    <h2>Cursos Registrados </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -52,12 +52,12 @@
 
 <?php 
 $cnn=oci_connect("consultora","consultora");
-//FALTA COLOCAR EL COD_DOCENTE GENERAL , SOLO LEE 21700 POR AHORA
-$sql="SELECT c.cod_curso as COD_CURSO,c.nom_curso as mis_cursos from docente  d join docente_curso  
-dc on dc.COD_DOCENTE=d.COD_DOCENTE join curso c on c.COD_CURSO=dc.COD_CURSO where dc.cod_docente=$iduser";
-$unir=oci_parse($cnn,$sql);
+$sql2="SELECT * from curso";
+$sql3="SELECT c.cod_curso , c.nom_curso, c.cod_esc,c.num_ciclo,c.num_creditaje,c.plan_estudio,c.horas , d.especialidad 
+ from curso c join docente_curso t on t.cod_curso=c.cod_curso join docente d on t.cod_docente=d.codigo where t.cod_docente=$iduser";
+$unir=oci_parse($cnn,$sql3);
 oci_execute($unir);
-while (($scar = oci_fetch_assoc($unir)) != false) {
+while(($scar = oci_fetch_assoc($unir)) != false) {
   // Usar nombres de columna en mayúsculas para los índices del array asociativo
                      echo " <div class='col-md-55'>";
                          echo "     <div class='thumbnail'>";
@@ -65,18 +65,19 @@ while (($scar = oci_fetch_assoc($unir)) != false) {
                           echo "         <img style='width: 100%; display: block;' src='images/media.jpg' alt='image' />";
                                     echo "<div class='mask no-caption'>";
                                       echo "<div class='tools tools-bottom'>";
-                               echo "<a href='TemasController' ><i class='fa fa-link'></i></a> ";
+                               echo "<a href=".RUTA_URL."/TemasController/method/".$scar['COD_CURSO']." ><i class='fa fa-link'></i></a> ";
                                echo "<a href='#'><i class='fa fa-pencil'></i></a>"; 
                                echo "<a href='#'><i class='fa fa-times'></i></a>";
                                echo "       </div>
                                     </div>
                                 </div>
-                              <div class='caption'>
-                                  <p><strong>Image Name</strong></p>";
-                              echo    "<p>".$scar['MIS_CURSOS']."</p>
+                              <div class='caption'>";
+                                  
+                              echo    "<p>".$scar['NOM_CURSO']."</p>
                               </div>
                               </div>
                             </div>";     
+                            
                     }
 ?>
                     </div>

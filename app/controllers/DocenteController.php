@@ -10,6 +10,7 @@ Class DocenteController extends Controller{
 	public function index(){
 		//todo controlador debe cargar un metodo index
 		//obtener usuario
+		SESSION::init();
 		$datos =[
 			'titulo' => 'Bienvenidos a mi webMVC'
 		];

@@ -5,14 +5,15 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Plain Page</h3>
+                <h3>Creando Evaluacion</h3>
               </div>
 
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
-                  <a class="btn btn-danger" href="TemasController" role="button">Terminar Examen</a>
+                  <a class="btn btn-danger" href="#" id="botonPrueba" role="button">Terminar Examen</a>
                   </div>
+                  
                 </div>
               </div>
 
@@ -51,11 +52,8 @@
                       </ul>
 
                       <div id="step-11">
-                        <h2 class="StepTitle">Step 1 Content</h2>
                         <form class="form-horizontal form-label-left">
-
-                          <span class="section">Personal Info</span>
-                   
+                   <br><br><br>
                           <div class="form-group row">
                             <label class="col-form-label col-md-3 col-sm-3 label-align">Tipo de Evaluacion</label>
                             <div class="col-md-6 col-sm-6">
@@ -118,50 +116,240 @@
                         </form>
                       </div>
                       <div id="step-22">
-                        <h2 class="StepTitle">Step 2 Content</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                        <h2 class="StepTitle">Temas que se incluirán en el examen</h2>
+                        <div class="clearfix"></div>
+                                <div class="col-md-3 col-sm-3 ">
+                                <div class="checkbox">
+                                    <label>
+                                    <input type="checkbox" class="flat"> Tema 1
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                    <input type="checkbox" class="flat"> Tema 2
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                    <input type="checkbox" class="flat"> Tema 3
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                    <input type="checkbox" class="flat"> Tema 4
+                                    </label>
+                                </div>
+                                </div>
+                          <div class="col-md-3 col-sm-3 ">
+                        <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 5
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 6
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 7
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 8
+                            </label>
+                          </div>
+                          </div>
+                          <div class="col-md-3 col-sm-3 ">
+                        <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 9
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 10
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 11
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 12
+                            </label>
+                          </div>
+                          </div>
+                          <div class="col-md-3 col-sm-3 ">
+                        <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 13
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 14
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 15
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" class="flat"> Tema 16
+                            </label>
+                          </div>
+                          </div>
+                          <br><br><br><br><br><br><br><br><br><br>
+
+                          <div class="form-group row">
+                            <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Nro de Preguntas</label>
+                            <div class="col-md-3 col-sm-3">
+                              <input id="middle-name2" class="form-control " type="text" name="hora-inicio">
+                            </div>
+                          </div>
+
+        
                       </div>
-                      <div id="step-33">
-                        <h2 class="StepTitle">Step 3 Content</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                        <div id="step-33">
+                            <h2 class="StepTitle">Seleccionando las preguntas...</h2>
+                            <div class="col-md-12 col-sm-12">
+                            <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                      <div class="panel">
+                        <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          <h4 class="panel-title">Tema 1</h4>
+                        </a>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                          <ul class="to_do">
+                      <li>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                          <input type="checkbox" class="flat"> Schedule meeting with new client </p>
+                      </li>
+                      <li>
+                        <p>
+                          <input type="checkbox" class="flat"> Create email address for new intern</p>
+                      </li>
+                      <li>
+                        <p>
+                          <input type="checkbox" class="flat"> Have IT fix the network printer</p>
+                      </li>
+                    </ul>
+                          </div>
+                        </div>
                       </div>
+                      <div class="panel">
+                        <a class="panel-heading collapsed" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          <h4 class="panel-title">Tema 4</h4>
+                        </a>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                          <div class="panel-body">
+                          <ul class="to_do">
+                      <li>
+                        <p>
+                          <input type="checkbox" class="flat"> Food truck fixie locavors mcsweeney</p>
+                      </li>
+                      <li>
+                        <p>
+                          <input type="checkbox" class="flat"> Food truck fixie locavors mcsweeney</p>
+                      </li>
+                    </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel">
+                        <a class="panel-heading collapsed" role="tab" id="headingThree" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          <h4 class="panel-title">Tema 6</h4>
+                        </a>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="panel-body">
+                                    <ul class="to_do">
+                                <li>
+                                    <p>
+                                    <input type="checkbox" class="flat"> Schedule meeting with new client </p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <input type="checkbox" class="flat"> Create email address for new intern</p>
+                                </li>
+                        
+                                </ul>
+                          </div>
+                        </div>
+                      </div>
+<!--aqui comienza-->
+<div class="panel">
+                        <a class="panel-heading collapsed" role="tab" id="headingFour" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          <h4 class="panel-title">Tema 7</h4>
+                        </a>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                          <div class="panel-body">
+                                    <ul class="to_do">
+                                <li>
+                                    <p>
+                                    <input type="checkbox" class="flat"> Schedule meeting with new client </p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <input type="checkbox" class="flat"> Create email address for new intern</p>
+                                </li>
+                        
+                                </ul>
+                          </div>
+                        </div>
+                      </div>
+<!--Aqui acaba-->
+
+                    </div>
+                    <br><br><br><br><br><br><br><br>
+                            </div>
+                            
+                        </div>
+
                       <div id="step-44">
-                        <h2 class="StepTitle">Step 4 Content</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                      <div class="clearfix"></div>
+                      <div class="text-center w-100"><h2>Examen Parcial</h2></div>
+
+                      <div class="col-md-6 col-sm-6 ">
+<?php
+$i=1;
+while($i<=10){
+                       echo '       <div class="checkbox">
+                                <label>Pregunta nro '.$i.'</label><br>
+                                <label>
+                                  <input type="checkbox" value=""> Option one. select more than one options<br>
+                                  <input type="checkbox" value=""> Option one. select more than one options<br>
+                                  <input type="checkbox" value=""> Option one. select more than one options<br>
+                                  <input type="checkbox" value=""> Option one. select more than one options<br>
+                                  <input type="checkbox" value=""> Option one. select more than one options<br>
+                                </label>
+                              </div>';
+                            $i++;
+}?>
+                      </div>
+                      <div class="col-md-6 col-sm-6 ">
+<?php
+$i1=11;
+while($i1<=20){
+                       echo '       <div class="checkbox">
+                                <label>Pregunta nro '.$i1.'.</label><br>
+                                <label>
+                                  <input type="checkbox" value=""> Option one. select more than one options<br>
+                                  <input type="checkbox" value=""> Option one. select more than one options<br>
+                                  <input type="checkbox" value=""> Option one. select more than one options<br>
+                                  <input type="checkbox" value=""> Option one. select more than one options<br>
+                                  <input type="checkbox" value=""> Option one. select more than one options<br>
+                                </label>
+                              </div>';
+                            $i1++;
+}?>
+                      </div>
                       </div>
                     </div>
                     <!-- End SmartWizard Content -->
@@ -198,7 +386,8 @@
     <script src="vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="vendors/nprogress/nprogress.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script scr="js/prueba.js"> </script>
        <!-- bootstrap-daterangepicker -->
        <script src="vendors/moment/min/moment.min.js"></script>
        <!-- bootstrap-datetimepicker -->    
@@ -206,6 +395,7 @@
      <!-- jQuery Smart Wizard -->
      <script src="vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
     <!-- Custom Theme Scripts -->
+    <script src="vendors/iCheck/icheck.min.js"></script>
 
     <!-- Cropper -->
     <script src="vendors/cropper/dist/cropper.min.js"></script>

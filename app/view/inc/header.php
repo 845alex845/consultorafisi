@@ -1,8 +1,17 @@
 <?php 
-session_start();
 $iduser=$_SESSION["usuario"];
+$conn=oci_connect("consultora","consultora");
+$sql="SELECT *  from usuario WHERE codigo=$iduser";
+$prepare=oci_parse($conn,$sql);
+oci_execute($prepare);
+$scar = oci_fetch_assoc($prepare);
 if(!isset($iduser)){
   header("Location: login3.php ");
+}
+if($scar['CODIGO'] < 16000000 ){
+  $rol ="docente";
+}else{
+  $rol="alumno";
 }
 ?>
 <!DOCTYPE html>
@@ -14,7 +23,7 @@ if(!isset($iduser)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! </title>
+    <title>Aula Virtual San Marcos </title>
 
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +43,7 @@ if(!isset($iduser)){
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Aula Virtual</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -45,8 +54,9 @@ if(!isset($iduser)){
                 <img src="images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe(<?php echo $iduser;?>)</h2>
+                <span>Bienvenido <?php echo $rol."<br>". $scar['NOM_USUARIO'].' '.$scar['APE_PAT'].' '.$scar['APE_MAT'];?></span>
+
+                
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -60,7 +70,7 @@ if(!isset($iduser)){
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-edit"></i> Mi información <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="DocenteController">Form Validation</a></li>
+                      <li><a href="<?php echo RUTA_URL ;?>/DocenteController">Form Validation</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> Mis cursos <span class="fa fa-chevron-down"></span></a>
@@ -71,7 +81,7 @@ if(!isset($iduser)){
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Mis Evaluaciones<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="ExamenController">Examenes</a></li>
+                      <li><a href="<?php echo RUTA_URL ;?>/ExamenController">Examenes</a></li>
                     </ul>
                   </li>     
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>

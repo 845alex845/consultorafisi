@@ -15,7 +15,7 @@
                         
               <div class="row justify-content-center mb-4">
                 <div class="col-md-8 text-center">
-                  <h1>We Are Expert in <span class="typed-words"></span></h1>
+                  <h1>We Are Expert in <?php echo $datos['CODIGO']?> <span class="typed-words"></span></h1>
                   <p class="lead mb-5">We Make Beautiful Things</p>
                   <div><a href="#" class="btn btn-primary btn-md">Hire Us</a></div>
                 </div>

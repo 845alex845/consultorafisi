@@ -1,53 +1,24 @@
 <?php
-require_once 'Persona.php';
-class Docente{
-    private $cod_docente;
-    private $nombres;
-	private $apellidos;
-	private $edad;
-	private $contraseña;
 
-    public function __construct(){
-        /*parent::__construct();*/
-    }
 
-	public function getCod_docente(){
-		return $this->cod_docente;
+class Docente {
+	private $codigo;
+	private $especialidad;
+
+	public function __construct(){
+		//parent::__construct(); esto es cuando tenemos algo en el constructor del padre
 	}
 
-	public function setCod_docente($cod_docente){
-		$this->cod_docente =$cod_docente;
-	}
+public function obtenerDocentes($id){
+//$sql="SELECT * from docente where cod_docente=$id";
+	$sql="select u.codigo , u.nom_usuario, u.clave , u.nombre, u.ape_pat , u.ape_mat, u.tipo_doc, u.nro_doc , u.telefono , u.celular, u.email, u.genero , u.foto, u.fecha_nac
+	,u.direccion, u.estado_civil, d.especialidad from usuario u join docente d on d.CODIGO=u.CODIGO WHERE u.codigo=$id ";
+	$conn=oci_connect("consultora","consultora");
+	$prepare=oci_parse($conn,$sql);
+	oci_execute($prepare);
+	$scar = oci_fetch_assoc($prepare);
+	return $scar; 
+}
 
-	public function getNombres(){
-		return $this->nombres;
-	}
 
-	public function setNombres($nombres){
-		$this->nombres = $nombres;
-	}
-
-	public function getApellidos(){
-        return $this->apellidos;
-	}
-
-	public function setApellidos($apellidos){
-		$this->apellidos = $apellidos;
-	}
-	public function getEdad(){
-        return $this->edad;
-	}
-
-	public function setEdad($edad){
-		$this->edad = $edad;
-	}
-	public function getContraseña(){
-        return $this->contraseña;
-	}
-
-	public function setContraseña($contraseña){
-		$this->contraseña = $contraseña;
-    }
-        
-    public function __destruct(){}
 }

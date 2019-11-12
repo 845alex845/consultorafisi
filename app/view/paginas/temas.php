@@ -1,11 +1,11 @@
-<?php require RUTA_APP . '/view/inc/header.php' ?>
-<?php require RUTA_APP . '/view/inc/navbar.php' ?>
+<?php require RUTA_APP . '/view/inc/header2.php' ?>
+<?php require RUTA_APP . '/view/inc/navbar2.php' ?>
 <!-- page content -->
 <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Plain Page</h3>
+                <h3>Curso: <?php echo $datos['nombre']?></h3>
               </div>
 
               <div class="title_right">
@@ -24,15 +24,15 @@
                     <div class="col-md-8 col-sm-8 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><i class="fa fa-align-left"></i> Collapsible / Accordion <small>Sessions</small></h2>
+                    <h2><i class="fa fa-align-left"></i> Contenido del Curso </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
+                            <a class="dropdown-item" href="#">Herramientas</a>
+                            <a class="dropdown-item" href="#">Configuraciones</a>
                           </div>
                       </li>
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
@@ -73,15 +73,15 @@
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><i class="fa fa-align-left"></i> Collapsible / Accordion <small>Sessions</small></h2>
+                    <h2><i class="fa fa-align-left"></i> Miembros del Curso</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
+                            <a class="dropdown-item" href="#">Editar</a>
+                            <a class="dropdown-item" href="#">Configuraciones</a>
                           </div>
                       </li>
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
@@ -95,7 +95,7 @@
                     <div class="accordion" id="accordion1" role="tablist" aria-multiselectable="true">
                       <div class="panel">
                         <a class="panel-heading" role="tab" id="headingOne1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne">
-                          <h4 class="panel-title">Alumnos participantes</h4>
+                          <h4 class="panel-title">Participante</h4>
                         </a>
                         <div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                           <div class="panel-body">
@@ -109,6 +109,12 @@
                                 </tr>
                               </thead>
                               <tbody>
+                              <tr>
+                                  <th scope="row">0</th>
+                                  <td>Gabriela</td>
+                                  <td>Delgado</td>
+                                  <td>20######</td>
+                                </tr>
                                 <tr>
                                   <th scope="row">1</th>
                                   <td>Alex</td>
@@ -169,14 +175,14 @@
     </div>
 
     <!-- jQuery -->
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-   <script src="vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <script src="../../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js"></script>
+    <script src="../../vendors/nprogress/nprogress.js"></script>
     <!-- Custom Theme Scripts -->
-    <script src="build/js/custom.min.js"></script>
+    <script src="../../build/js/custom.min.js"></script>
   </body>
 </html>

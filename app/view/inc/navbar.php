@@ -1,4 +1,11 @@
- <!-- top navigation -->
+<?php 
+$iduser=$_SESSION["usuario"];
+$conn=oci_connect("consultora","consultora");
+$sql="SELECT *  from usuario WHERE codigo=$iduser";
+$prepare=oci_parse($conn,$sql);
+oci_execute($prepare);
+$scar = oci_fetch_assoc($prepare);
+?> <!-- top navigation -->
  <div class="top_nav">
             <div class="nav_menu">
                 <div class="nav toggle">
@@ -8,7 +15,7 @@
                 <ul class=" navbar-right">
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      <img src="images/img.jpg" alt="">John Doe
+                      <img src="images/img.jpg" alt=""><?php echo $scar['NOMBRE'].' '.$scar['APE_PAT'].' '.$scar['APE_MAT'] ?>
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item"  href="javascript:;"> Profile</a>

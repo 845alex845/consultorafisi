@@ -437,7 +437,7 @@ $.fn.smartWizard.defaults = {
     enableFinishButton: false, // make finish button enabled always
 	hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
     errorSteps:[],    // Array Steps with errors
-    labelNext:'Next',
+    labelNext:'Siguiente',
     labelPrevious:'Previous',
     labelFinish:'Finish',
     noForwardJumping: false,
