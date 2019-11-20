@@ -438,7 +438,7 @@ $.fn.smartWizard.defaults = {
 	hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
     errorSteps:[],    // Array Steps with errors
     labelNext:'Siguiente',
-    labelPrevious:'Previous',
+    labelPrevious:'Anterior',
     labelFinish:'Finish',
     noForwardJumping: false,
     onLeaveStep: null, // triggers when leaving a step

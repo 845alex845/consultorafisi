@@ -14,9 +14,7 @@ Class CursoController extends Controller{
 		SESSION::init();
 		$curso=$this->cursoModelo->obtenerCursos($_SESSION['usuario']);
 
-		$datos =[
-'a'=>'gaa'
-		];
+		$datos=$curso;
 	
 		$this->vista('paginas/cursos',$datos);
 	}

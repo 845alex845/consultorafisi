@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap Login Form Template</title>
+        <title>Aula Virtual UNMSM</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -40,12 +40,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Bootstrap</strong> Login Form</h1>
+                            <h1><strong>UNMSM</strong> - Aula Virtual</h1>
                             <div class="description">
-                            	<p>
-	                            	This is a free responsive login form made with Bootstrap. 
-	                            	Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
-                            	</p>
+                            	
                             </div>
                         </div>
                     </div>
@@ -53,8 +50,8 @@
                         <div class="col-sm-6 col-sm-offset-3 form-box">
                         	<div class="form-top">
                         		<div class="form-top-left">
-                        			<h3>Login to our site</h3>
-                            		<p>Enter your username and password to log on:</p>
+                        			<h3>Inicie Sesión</h3>
+                            		<p>Ingrese su nombre de usuario y contraseña para iniciar sesión:</p>
                         		</div>
                         		<div class="form-top-right">
                         			<i class="fa fa-lock"></i>
@@ -63,14 +60,14 @@
                             <div class="form-bottom">
 			                    <form role="form" action="LoginController/login" method="post" class="login-form">
 			                    	<div class="form-group">
-			                    		<label class="sr-only" for="form-username">Username</label>
+			                    		<label class="sr-only" for="form-username">Usuario</label>
 			                        	<input type="text" name="username" placeholder="Username..." class="form-username form-control" id="form-username">
 			                        </div>
 			                        <div class="form-group">
-			                        	<label class="sr-only" for="form-password">Password</label>
+			                        	<label class="sr-only" for="form-password">Contraseña</label>
 			                        	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
 			                        </div>
-			                        <button type="submit" class="btn">Sign in!</button>
+			                        <button type="submit" class="btn">INGRESAR</button>
 			                    </form>
 		                    </div>
                         </div>
@@ -79,10 +76,10 @@
                         <div class="col-sm-6 col-sm-offset-3 social-login">
                         	<h3>...or login with:</h3>
                         	<div class="social-login-buttons">
-	                        	<a class="btn btn-link-2" href="#">
+	                        	<a class="btn btn-link-2" href="https://web.facebook.com/">
 	                        		<i class="fa fa-facebook"></i> Facebook
 	                        	</a>
-	                        	<a class="btn btn-link-2" href="#">
+	                        	<a class="btn btn-link-2" href="https://twitter.com/">
 	                        		<i class="fa fa-twitter"></i> Twitter
 	                        	</a>
 	                        	<a class="btn btn-link-2" href="#">

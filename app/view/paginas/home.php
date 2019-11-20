@@ -4,29 +4,24 @@
         <div class="right_col" role="main">
           <div class="">
             <div class="clearfix"></div>
-
-              <div class="row">
-                <div class="col-md-12">
-                <div class="site-blocks-cover overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+            <div class="site-blocks-cover overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
-          <div class="col-md-12" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-md-12 col-sm-12" data-aos="fade-up" data-aos-delay="400">
                         
-              <div class="row justify-content-center mb-4">
-                <div class="col-md-8 text-center">
-                  <h1>We Are Expert in <?php echo $datos['CODIGO']?> <span class="typed-words"></span></h1>
-                  <p class="lead mb-5">We Make Beautiful Things</p>
-                  <div><a href="#" class="btn btn-primary btn-md">Hire Us</a></div>
-                </div>
+            <div class="row justify-content-center mb-4">
+              <div class="col-md-8 text-center">
+                <h1>BIENVENIDO,<span class="typed-words"></span></h1>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <div><a href="#" class="btn btn-primary btn-md">Hire Us</a></div>
               </div>
+            </div>
 
           </div>
         </div>
       </div>
     </div>  
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -49,5 +44,20 @@
 
     <!-- Custom Theme Scripts -->
     <script src="build/js/custom.min.js"></script>
+
+      <script src="js/typed.js"></script>
+            <script>
+            var typed = new Typed('.typed-words', {
+            strings: ["Explore su aula virtual"," Gaaaaa"," Vas a caer chupetin :v"],
+            typeSpeed: 80,
+            backSpeed: 80,
+            backDelay: 4000,
+            startDelay: 1000,
+            loop: true,
+            showCursor: true
+            });
+            </script>
+
+  <script src="js/main.js"></script>
   </body>
 </html>

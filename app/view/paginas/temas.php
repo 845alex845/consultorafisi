@@ -5,13 +5,13 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Curso: <?php echo $datos['nombre']?></h3>
+                <h3>Curso: <?php echo $datos['nombre'].$datos['id'] ?></h3>
               </div>
 
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
-                  <a class="btn btn-primary" href="ExamenController" role="button">Crear Examen</a>
+                  <a class="btn btn-primary" href="../../ExamenController/method/<?php echo $datos['id']?>" role="button">Crear Examen</a>
                   </div>
                 </div>
               </div>
@@ -45,15 +45,15 @@
                     <!-- start accordion -->
                     <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
                    <?php
-                   $i=1;
-                   while($i<=16){
+                   $i=0;
+                   while($i<count($datos2)){
                       echo '<div class="panel">
                         <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          <h4 class="panel-title">Tema.'.$i.' </h4>
+                          <h4 class="panel-title">Tema '.$datos2[$i]['NUM_TEMA'].': '.$datos2[$i]['NOM_TEMA'].' </h4>
                         </a>
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                           <div class="panel-body">
-                          <p><strong>Collapsible Item 3 data</strong>
+                          <p><strong>Agregar contenido...</strong>
                           </div>
                         </div>
                       </div>';
@@ -95,7 +95,7 @@
                     <div class="accordion" id="accordion1" role="tablist" aria-multiselectable="true">
                       <div class="panel">
                         <a class="panel-heading" role="tab" id="headingOne1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne">
-                          <h4 class="panel-title">Participante</h4>
+                          <h4 class="panel-title">Participantes</h4>
                         </a>
                         <div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                           <div class="panel-body">

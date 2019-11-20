@@ -27,7 +27,7 @@
       
                   <div class="x_content">
 
-                  <div id="wizard_verticle" class="form_wizard wizard_verticle">
+                  
                       <ul class="list-unstyled wizard_steps">
                         <li>
                           <a href="#step-11">
@@ -121,7 +121,7 @@
 
                         </form>
                       </div>
-
+<!-- STEP -->
                       <div id="step-22">
                         <h2 class="StepTitle">Temas que se incluirán en el examen</h2>
                         <div class="clearfix"></div>
@@ -173,37 +173,34 @@
 
         
                       </div>
+<!-- STEP -->
                         <div id="step-33">
                             <h2 class="StepTitle">Seleccionando las preguntas...</h2>
                             <div class="col-md-12 col-sm-12">
                             <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
-                              
                       <div class="panel">
                         <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                           <h4 class="panel-title">Tema 1</h4>
                         </a>
-
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                           <div class="panel-body">
                           <ul class="to_do">
-                              <li>
-                                <p>
-                                  <input type="checkbox" class="flat"> Schedule meeting with new client </p>
-                              </li>
-                              <li>
-                                <p>
-                                  <input type="checkbox" class="flat"> Create email address for new intern</p>
-                              </li>
-                              <li>
-                                <p>
-                                  <input type="checkbox" class="flat"> Have IT fix the network printer</p>
-                              </li>
-                          </ul>
+                      <li>
+                        <p>
+                          <input type="checkbox" class="flat"> Schedule meeting with new client </p>
+                      </li>
+                      <li>
+                        <p>
+                          <input type="checkbox" class="flat"> Create email address for new intern</p>
+                      </li>
+                      <li>
+                        <p>
+                          <input type="checkbox" class="flat"> Have IT fix the network printer</p>
+                      </li>
+                    </ul>
                           </div>
                         </div>
-
                       </div>
-
                       <div class="panel">
                         <a class="panel-heading collapsed" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                           <h4 class="panel-title">Tema 4</h4>
@@ -271,7 +268,7 @@
                             </div>
                             
                         </div>
-
+<!-- STEP -->
                       <div id="step-44">
                       <div class="clearfix"></div>
                       <div class="text-center w-100"><h2>Examen Parcial</h2></div>
@@ -311,7 +308,8 @@ while($i1<=20){
 }?>
                       </div>
                       </div>
-                    </div>
+<!-- STEP -->
+                    
                     <!-- End SmartWizard Content -->
                   </div>
                 </div>

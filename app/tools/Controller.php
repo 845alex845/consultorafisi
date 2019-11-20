@@ -30,6 +30,25 @@ class Controller{
 		
 
 	}
+	public function vista2($vista, $datos =[],$datos2=[]){
+
+		//Session::init(); //iniciamos una sesion- contiene al session_star()
+		//chequeamos si el archivo vista existe
+	/*	if(!(Session::getStatus()==1)||empty(Session::get('docente'))){*/
+			if(file_exists('../app/view/' .$vista . '.php')){
+				require_once '../app/view/' .$vista . '.php';
+			}
+			else{
+				//si el archivo de la vista no existe
+				die('la vista no existe');
+			}/*
+		}else{
+			
+			die('NO PUEDE INGRESAR SIN HABERTE LOGUEADO');
+		}*/
+		
+
+	}
 }
 
  ?>

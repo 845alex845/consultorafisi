@@ -892,13 +892,15 @@
   content: "\e260"; }
 
 .left_col {
-  background: #2A3F54; }
+  background: rgb(0, 7, 14); }
 
 .container {
   width: 100%;
   padding: 0;
   max-width: 100%; }
-
+.contenedor{
+  max-height:500px;
+}
 .nav-sm .container.body .col-md-3.left_col {
   min-height: 100%;
   width: 70px;

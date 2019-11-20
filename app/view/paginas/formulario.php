@@ -4,7 +4,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Form Validation</h3>
+                <h3>Formulario</h3>
               </div>
 
               <div class="title_right">
@@ -24,7 +24,7 @@
               <div class="col-md-12 col-sm-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Form validation <small>sub title</small></h2>
+                   
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -44,78 +44,135 @@
 
                     <form class="form-horizontal form-label-left" novalidate>
 
-                      <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a>
-                      </p>
-                      <span class="section">Personal Info</span>
-
+                     
+                      <span class="section">MIS DATOS PERSONALES</span>
+                      <!--CODIGO
+                      8 digitos -->
                       <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Name <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">CODIGO: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" required="required" type="text">
+                          <input id="name" disabled="disabled" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name"  value="545" required="required" type="text">
                         </div>
                       </div>
+                      <!--NOMBRE
+                      15 byte-->
                       <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="email">Email <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">NOMBRE: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input type="email" id="email" name="email" required="required" class="form-control">
+                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name"  required="required" type="text" readonly>
                         </div>
                       </div>
+                      <!--APE_PAT
+                      15 byte-->                      
                       <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="email">Confirm Email <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">APELLIDO PATERNO: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6">
+                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name"  required="required" type="text" readonly>
+                        </div>
+                      </div>
+                      <!--APE_MAT
+                      15 byte-->                      
+                      <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">APELLIDO MATERNO: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6">
+                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name"  required="required" type="text" readonly>
+                        </div>
+                      </div>
+                      <!--TIPO DE DOCUMENTO
+                      20 byte-->                      
+                      <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">TIPO DOCUMENTO: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6">
+                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name"  required="required" type="text">
+                        </div>
+                      </div>
+                      <!--NRO DE DOCUMENTO
+                      8 digitos-->                       
+                      <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="email">NRO. DOCUMENTO <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6">
+                          <input type="email" id="email" name="email" required="required" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <!--TELEFONO
+                      9digitos-->                       
+                      <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="email">TELEFONO <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
                           <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control">
                         </div>
                       </div>
+                      <!--CELULAR
+                      9digitos-->                       
                       <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="number">Number <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="number">CELULAR <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
                           <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100" class="form-control">
                         </div>
                       </div>
+                      <!--EMAIL
+                      40byte-->                       
                       <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="website">Website URL <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" >EMAIL: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
                           <input type="url" id="website" name="website label-align" required="required" placeholder="www.website.com" class="form-control">
                         </div>
                       </div>
+                      <!--GENERO
+                      1byte-->                       
                       <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="occupation">Occupation <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="occupation">GENERO <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
                           <input id="occupation" type="text" name="occupation" data-validate-length-range="5,20" class="optional form-control">
                         </div>
                       </div>
+                      <!--FOTO
+                      30 byte-->                       
                       <div class="item form-group">
-                        <label for="password" class="col-form-label col-md-3 label-align">Password</label>
+                        <label  class="col-form-label col-md-3 col-sm-3 label-align">FOTO</label>
                         <div class="col-md-6 col-sm-6">
-                          <input id="password" type="password" name="password" data-validate-length="6,8" class="form-control" required="required">
+                          <input id="password"  name="password" data-validate-length="6,8" class="form-control" required="required">
                         </div>
                       </div>
+                      <!--FECHA_NAC
+                      date-->                       
                       <div class="item form-group">
-                        <label for="password2" class="col-form-label col-md-3 col-sm-3 label-align ">Repeat Password</label>
+                        <label  class="col-form-label col-md-3 col-sm-3 label-align ">FECHA NACIMIENTO</label>
                         <div class="col-md-6 col-sm-6">
-                          <input id="password2" type="password" name="password2" data-validate-linked="password" class="form-control" required="required">
+                          <input id="fechanacimiento" type="text" name="fechanacimiento"  class="form-control" required="required" readonly>
                         </div>
                       </div>
+
+                      <!--DIRECCION
+                      50 byte-->                       
                       <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="telephone">Telephone <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="textarea">DIRECCION: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6">
+                          <textarea id="direccion" required="required" name="direccion" class="form-control"></textarea>
+                        </div>
+                      </div>
+                      
+                        <!--TELEFONO
+                        -->                       
+                        <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="telephone">ESTADO CIVIL:<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
                           <input type="tel" id="telephone" name="phone" required="required" data-validate-length-range="8,20" class="form-control">
                         </div>
                       </div>
-                      <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="textarea">Textarea <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6">
-                          <textarea id="textarea" required="required" name="textarea" class="form-control"></textarea>
-                        </div>
-                      </div>
+
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 offset-md-3">

@@ -26,16 +26,15 @@ if($scar['CODIGO'] < 16000000 ){
     <title>Aula Virtual San Marcos </title>
 
     <!-- Bootstrap -->
-    <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="../../vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
-    <link href="../../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="../../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <!-- Custom styling plus plugins -->
-    <link href="../../build/css/custom.min.css" rel="stylesheet">
+    <link href="../build/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -52,7 +51,7 @@ if($scar['CODIGO'] < 16000000 ){
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="../../images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Bienvenido <?php echo $rol."<br>". $scar['NOM_USUARIO'].' '.$scar['APE_PAT'].' '.$scar['APE_MAT'];?></span>
@@ -71,18 +70,18 @@ if($scar['CODIGO'] < 16000000 ){
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-edit"></i> Mi información <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo RUTA_URL ;?>/DocenteController">Form Validation</a></li>
+                      <li><a href="DocenteController">Form Validation</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> Mis cursos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo RUTA_URL ?>/CursoController">Ver Cursos</a></li>
+                      <li><a href="CursoController">Ver Cursos</a></li>
 
                     </ul>
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Mis Evaluaciones<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo RUTA_URL ;?>/ExamenController">Examenes</a></li>
+                      <li><a href="ExamenController">Examenes</a></li>
                     </ul>
                   </li>     
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>

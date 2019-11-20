@@ -51,34 +51,29 @@
                       
 
 <?php 
-$cnn=oci_connect("consultora","consultora");
-$sql2="SELECT * from curso";
-$sql3="SELECT c.cod_curso , c.nom_curso, c.cod_esc,c.num_ciclo,c.num_creditaje,c.plan_estudio,c.horas , d.especialidad 
- from curso c join docente_curso t on t.cod_curso=c.cod_curso join docente d on t.cod_docente=d.codigo where t.cod_docente=$iduser";
-$unir=oci_parse($cnn,$sql3);
-oci_execute($unir);
-while(($scar = oci_fetch_assoc($unir)) != false) {
-  // Usar nombres de columna en mayúsculas para los índices del array asociativo
-                     echo " <div class='col-md-55'>";
-                         echo "     <div class='thumbnail'>";
-                          echo "      <div class='image view view-first'>";
-                          echo "         <img style='width: 100%; display: block;' src='images/media.jpg' alt='image' />";
-                                    echo "<div class='mask no-caption'>";
-                                      echo "<div class='tools tools-bottom'>";
-                               echo "<a href=".RUTA_URL."/TemasController/method/".$scar['COD_CURSO']." ><i class='fa fa-link'></i></a> ";
-                               echo "<a href='#'><i class='fa fa-pencil'></i></a>"; 
-                               echo "<a href='#'><i class='fa fa-times'></i></a>";
-                               echo "       </div>
+  $i=0;
+  while($i<count($datos)){
+                     echo " <div class='col-md-55'>
+                             <div class='thumbnail'>
+                                <div class='image view view-first'>
+                                  <img style='width: 100%; display: block;' src='images/media.jpg' alt='image' />
+                                    <div class='mask no-caption'>
+                                      <div class='tools tools-bottom'>
+                               <a href="."TemasController/method/".$datos[$i]['COD_CURSO']." ><i class='fa fa-link'></i></a> 
+                               <a href='#'><i class='fa fa-pencil'></i></a>
+                               <a href='#'><i class='fa fa-times'></i></a>
+                                      </div>
                                     </div>
                                 </div>
-                              <div class='caption'>";
+                              <div class='caption'>
                                   
-                              echo    "<p>".$scar['NOM_CURSO']."</p>
+                              <p>".$datos[$i]['NOM_CURSO']."</p>
                               </div>
                               </div>
                             </div>";     
                             
-                    }
+                  $i++;
+   }
 ?>
                     </div>
                   </div>

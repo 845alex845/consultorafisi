@@ -70,7 +70,7 @@ if($scar['CODIGO'] < 16000000 ){
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-edit"></i> Mi información <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo RUTA_URL ;?>/DocenteController">Form Validation</a></li>
+                      <li><a href="DocenteController">Form Validation</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> Mis cursos <span class="fa fa-chevron-down"></span></a>
@@ -81,7 +81,7 @@ if($scar['CODIGO'] < 16000000 ){
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Mis Evaluaciones<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo RUTA_URL ;?>/ExamenController">Examenes</a></li>
+                      <li><a href="ExamenController">Examenes</a></li>
                     </ul>
                   </li>     
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
