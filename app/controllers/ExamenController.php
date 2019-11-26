@@ -20,13 +20,10 @@ Class ExamenController extends Controller{
 	public function method($idcurso){
 		//esta funcion se invoca despues de clickear CREAR EXAMEN EN LOS TEMAS<s
 		SESSION::init();
- 
 			$datos=[
 				'id' => $idcurso,
 				
-			];
-			
-			
+			];	
 			$this->vista('paginas/iniciarexamen',$datos);
 	}
 
@@ -49,14 +46,15 @@ Class ExamenController extends Controller{
 			$temas=$this->temaModelo->obtenerTemas($curso);
 			$datos2=$temas;
 				$datos=[
-					'cod' =>55551,
+					'codexa' =>55551,
 					'tipo' => $tipo,
 					'fecha'=>$fecha,
 					'hora'=>$hora,
 					'duracion'=>$duracion,
 					'estado'=>1,
+					'idcurso'=>$idcurso,
 				];
-			if($this->examenModelo->agregarExamen($datos['cod'],$datos['tipo'],$datos['fecha'],$datos['hora'],$datos['duracion'],$curso,$_SESSION['usuario'])){
+			if($this->examenModelo->agregarExamen($datos['codexa'],$datos['tipo'],$datos['fecha'],$datos['hora'],$datos['duracion'],$_SESSION['usuario'],$curso)){
 				$this->vista2('paginas/selecttemas',$datos,$datos2);
 			}else{
 				//cuando se presione el boton se debe asegurar q esté lleno

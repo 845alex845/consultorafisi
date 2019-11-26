@@ -1,5 +1,5 @@
 
-<?php require RUTA_APP . '/view/inc/header3.php' ?>
+<?php require RUTA_APP . '/view/inc/header2.php' ?>
 <?php require RUTA_APP . '/view/inc/navbar.php' ?>
 <!-- page content -->
 <div class="right_col" role="main">
@@ -27,7 +27,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Plain Page</h2>
+                    <h2>Plain Page </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -45,43 +45,74 @@
                   </div>
                   <div class="x_content">
                   <div class="col-md-3 col-sm-3 col-xs-3">
-                      <h1>PASO 3</h1>
+                      <h1>PASO 3 </h1>
                   </div>
                   <div class="col-md-9 col-sm-9 col-xs-9">
                   
-                  <form class="form-horizontal form-label-left" method="POST" action="../../EvaluacionController/method">
-
-                        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
-
+                  <form class="form-horizontal form-label-left" method="POST" action="../../EvaluacionController/crearExamen/<?php echo $datos['codexa']?>">
                               <!--  -->
-                              <div class="panel">
-                        <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          <h4 class="panel-title">Tema 1</h4>
-                        </a>
+                          <?php 
+                          $cont=0;
+                          $aux=0;
 
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                          <div class="panel-body">
-                          <ul class="to_do">
-                              <li>
-                                <p>
-                                  <input type="checkbox" class="flat"> Schedule meeting with new client </p>
-                              </li>
-                              <li>
-                                <p>
-                                  <input type="checkbox" class="flat"> Create email address for new intern</p>
-                              </li>
-                              <li>
-                                <p>
-                                  <input type="checkbox" class="flat"> Have IT fix the network printer</p>
-                              </li>
-                          </ul>
-                          </div>
-                        </div>
+                          while($cont<count($datos2)){
+                            for($i=0;$i<count($datos3);$i++){
+                              if ($datos2[$cont]==$datos3[$i]['COD_TEMA'] ){
+                                $aux=$i;
+                              }
+                          }
+                            echo'
+                            <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                                                  <div class="panel">
 
-                      </div>
-                              <!--  -->
-                        </div>
-                  
+                                                  <a class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <h4 class="panel-title"> Tema ';
+
+                                                  echo $datos3[$aux]['NUM_TEMA'].': '.$datos3[$aux]['NOM_TEMA'];
+                                                    echo' </h4>
+                                                  </a>
+
+
+                                                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                                    <div class="panel-body">
+
+                                                    <ul class="to_do">';
+                                                    
+                                                    for($j=0;$j<count($datos3);$j++){
+                                                      if($datos2[$cont]==$datos3[$j]['COD_TEMA']){
+                                                        $aux2=$j;
+                                                        echo'
+                                                        <li>
+                                                          <p>
+                                                            <input value="'.$datos3[$j]['ID_PREGUNTA'].'" type="checkbox" name="preguntas[]"class="flat">'.$datos3[$j]['ENUNCIADO'].' </p>
+                                                        </li>';
+                                                      }
+
+                                                    }
+                                                      
+
+                                                    
+                                                  echo'
+                                                    </ul>
+
+                                                    </div>
+                                                  </div>
+
+                                                </div>
+                                                </div>';
+                                                $cont++;
+                                              }               
+                          ?>
+                              <!--  -->  
+                              <div class="col-md-12 col-sm-12 ">
+                                  <div class="form-group row">
+                                  <label for="middle-name" class="col-form-label col-md-4 col-sm-4 label-align"><!--  --></label>
+                                    <div class="col-md-3 col-sm-3">
+                   
+                                      <button type="submit" class="btn btn-round btn-success" disable>Iniciar Evaluación</button>
+                                    </div>
+                                  </div>
+                              </div>
                 </form>
 </div>
                   </div>
@@ -96,17 +127,17 @@
     </div>
 
     <!-- jQuery -->
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-   <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- FastClick -->
-    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <script src="../../vendors/fastclick/lib/fastclick.js"></script>
 
-    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <script src="../../vendors/iCheck/icheck.min.js"></script>
     <!-- NProgress -->
-    <script src="../vendors/nprogress/nprogress.js"></script>
+    <script src="../../vendors/nprogress/nprogress.js"></script>
     
     <!-- Custom Theme Scripts -->
-    <script src="../build/js/custom.min.js"></script>
+    <script src="../../build/js/custom.min.js"></script>
   </body>
 </html>

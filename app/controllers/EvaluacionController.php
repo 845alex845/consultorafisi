@@ -1,10 +1,9 @@
 <?php 
-include_once('../app/model/Docente.php');
-include_once("../app/service/DocenteService.php");
-
 Class EvaluacionController extends Controller{
 	public function __construct(){
-	//	$this->examenModelo=$this->modelo('Examen');
+		$this->preguntaModelo=$this->modelo('Pregunta');
+		$this->examenModelo=$this->modelo('Examen');
+		$this->alternativaModelo=$this->modelo('Alternativa');
 	}
 	public function index(){
 		//todo controlador debe cargar un metodo index
@@ -18,43 +17,47 @@ Class EvaluacionController extends Controller{
 
 	$this->vista2('paginas/selectquestion',$datos,$datos2);
 	}
-	public function method(){
+	public function method($param){
 		SESSION::init();
+		$codigocurso=substr($param,-8);
+		$codexamen=substr($param,0,5);
+
 		$nro=$_POST['nropreguntas'];
-		$datos2=$_POST['hobbies'];
+		$datos2=$_POST['hobbies'];//temas que se han seleccionado, está como hobbies por mientras
+
+		$preguntas=$this->preguntaModelo->obtenerPreguntas($codigocurso);//cod curso
+		$datos3=$preguntas;
+		//$datoexamen=$this->examenModelo->obtenerExamen($codexamen,$_SESSION['usuario']);
+		
 		$datos =[
-			'nro' => $nro,
-		];
-
-	$this->vista2('paginas/selectquestion',$datos,$datos2);
-	}
-	public function gaa(){
-		SESSION::init();
-		$datos =[
-			'titulo' => 'Bienvenidos a mi webMVC'
-		];
-
-	$this->vista('paginas/selectquestion');
-	}
-    public function crear(){
-        SESSION::init();
-        
-        $tipo=$_POST['tipoexamen'];
-        $fecha=$_POST['fechainicio'];
-        $hora=$_POST['horainicio'];
-        $duracion=$_POST['duracion'];
-
-			$datos=[
-                'tipo' => $tipo,
-                'fecha'=>$fecha,
-                'hora'=>$hora,
-                'duracion'=>$duracion,
-				
-			];
-			/*$datos2=$temas;*/
+			'nropreg' => $nro,
+			'idcurso'=>$codigocurso,
+			'codexa'=>$codexamen,
+			//'tipoexamen'=>$datoexamen['TIPO_EXAMEN'],
 			
-			$this->vista('paginas/gaa2',$datos);
+		];
+		
+		
+	$this->vista3('paginas/selectquestion',$datos,$datos2,$datos3);
 	}
+    public function crearExamen($codexam){//cod curso
+		SESSION::init();
+			$datoexamen=$this->examenModelo->obtenerExamen($codexam,$_SESSION['usuario']);
+			$datos=$_POST['preguntas'];//codigos de las preguntas seleccionadas
+			$datos2=[
+				'codexa'=>$codexam,
+				'tipoexamen'=>$datoexamen['TIPO_EXAMEN'],
+			];
+		//	$datos3=$this->alternativaModelo->obtenerAlt($datos);//preguntas
+			$this->vista2('paginas/formatoexamen',$datos,$datos2);
+	}
+	public function programarExamen($codexam){
+		//$datos=$codexam;
+		$datos=[
+			'codexa'=> $codexam,
+		];
 
+		$this->vista('paginas/gaa',$datos);
+	}
 
  }

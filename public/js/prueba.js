@@ -1,20 +1,20 @@
-var boton=document.getElementById('botonPrueba');
-boton.addEventListener('click',function(){
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.value) {
-          Swal.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-          )
-        }
-      })
+const boton=document.getElementById("confirmarexamen");
+boton.addEventListener("click",()=>(
+Swal.fire({
+  title: 'Estás seguro?',
+  text: "¡No podrás revertir esto!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Sí, Completar!'
+}).then((result) => {
+  if (result.value) {
+    Swal.fire(
+      'Evaluación creada!',
+      'Se ha programado una nueva evaluación.',
+      'success'
+    )
+  }
 })
+  ))

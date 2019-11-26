@@ -18,5 +18,13 @@ class Examen{
         oci_execute($prepare);
         return true;
     }
+    public function obtenerExamen($codexamen,$coddoc){
+      $sql="SELECT cod_examen, tipo_examen,fecha_examen,hora_inicio,duracion,cod_docente,cod_curso from examen where cod_examen=$codexamen and cod_docente=$coddoc";
+      $conn=oci_connect("consultora","consultora");
+      $prepare=oci_parse($conn,$sql);
+      oci_execute($prepare);
+      $scar = oci_fetch_assoc($prepare);
+      return $scar; 
+    }
 }
 ?>

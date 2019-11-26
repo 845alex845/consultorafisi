@@ -48,10 +48,9 @@
                       <h1>PASO 2</h1>
                   </div>
                   <div class="col-md-9 col-sm-9 col-xs-9">
-                  
-                  <form class="form-horizontal form-label-left" method="POST" action="../../EvaluacionController/method">
+                  <form class="form-horizontal form-label-left" method="POST" action="../../EvaluacionController/method/<?php echo $datos['codexa'].$datos['idcurso']?>"><!-- hemos cambiado codcurso -->
 
-                  <h2 class="StepTitle">Temas que se incluirán en el examen</h2>
+                  <h2 class="StepTitle">Temas que se incluirán en el examen <?php echo $datos['codexa'] ?></h2>
                         <div class="clearfix"></div>
                      
 
@@ -91,17 +90,17 @@
                         <input type="checkbox" name="hobbies[]" id="hobby12" value="<?php echo $datos2[11]['COD_TEMA'] ?>" class="flat" /> <?php echo "TEMA ".$datos2[11]['NUM_TEMA'].":".$datos2[11]['NOM_TEMA']?>
                         <br><br>
                         </div>
+
                         <div class="col-md-12 col-sm-12 ">
                           <div class="form-group row">
                             <label for="middle-name" class="col-form-label col-md-4 col-sm-4 label-align">Nro de Preguntas</label>
-                            <div class="col-md-3 col-sm-3">
-                              <input id="middle-name2" class="form-control " type="text" name="nropreguntas" value="10">
-                              <br>
-                              <button type="submit" class="btn btn-round btn-success" disable>Iniciar Evaluación</button>
-
-                            </div>
+                              <div class="col-md-3 col-sm-3">
+                                <input id="middle-name2" class="form-control " type="text" name="nropreguntas" value="10">
+                                <br>
+                                <button type="submit" class="btn btn-round btn-success" disable>Iniciar Evaluación</button>
+                              </div>
                           </div>
-</div>
+                      </div>
                 </div>
                 </form>
                   </div>

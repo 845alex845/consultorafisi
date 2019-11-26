@@ -1,6 +1,7 @@
 
 <?php require RUTA_APP . '/view/inc/header2.php' ?>
 <?php require RUTA_APP . '/view/inc/navbar2.php' ?>
+<link rel="stylesheet" href="../../css/prueba.css">
 <!-- page content -->
 <div class="right_col" role="main">
           <div class="">
@@ -27,7 +28,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Plain Page</h2>
+                    <h2>FORMATO DE EVALUACION</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -45,45 +46,74 @@
                   </div>
                   <div class="x_content">
                      <!--  -->
+                     <div class="col-md-3 col-sm-3 col-xs-3">
+                      <h1>PASO 4 <?php echo $datos2['codexa'] ?></h1>
+                    </div>
+                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <form class="form-horizontal form-label-left" method="POST" action="../../EvaluacionController/programarExamen/<?php echo $datos2['codexa']?>"><!-- hemos cambiado codcurso -->
 
                      <div class="clearfix"></div>
-                      <div class="text-center w-100"><h2>Examen Parcial</h2></div>
+                      <div class="text-center w-100"><h2><?php echo $datos2['tipoexamen'] ?></h2></div>
 
                       <div class="col-md-6 col-sm-6 ">
 <?php
-$i=1;
-while($i<=10){
-                       echo '       <div class="checkbox">
-                                <label>Pregunta nro '.$i.'</label><br>
+$i=0;
+$cant=((count($datos))/2);
+//el while está recorriendo las preguntas
+//datos codigo de preguntas
+//datos 2 variables aux
+//datos 3 para el enunciado y mostrar alternativas
+while($i<$cant){
+  $preg=Pregunta::obtenerPregunta($datos[$i]);
+                       echo ' <div class="checkbox">
+                                <label>'.($i+1).". ".$preg['ENUNCIADO'].'</label><br>
                                 <label>
-                                  <input type="checkbox" value=""> Option one. select more than one options<br>
-                                  <input type="checkbox" value=""> Option one. select more than one options<br>
-                                  <input type="checkbox" value=""> Option one. select more than one options<br>
-                                  <input type="checkbox" value=""> Option one. select more than one options<br>
-                                  <input type="checkbox" value=""> Option one. select more than one options<br>
-                                </label>
+                                ';
+                                $alter=Alternativa::obtenerAlt($datos[$i]);
+                                  for($z=0;$z<count($alter);$z++){
+                                    
+                                    echo '
+                                  <input type="checkbox" name="alternativas" value="'.$alter[$z]['ITEM'].'"> '.$alter[$z]['ENUN_ALT'].'<br>';
+                                  }
+                              echo '
+                              </label>
                               </div>';
                             $i++;
 }?>
                       </div>
                       <div class="col-md-6 col-sm-6 ">
-<?php
-$i1=11;
-while($i1<=20){
-                       echo '       <div class="checkbox">
-                                <label>Pregunta nro '.$i1.'.</label><br>
-                                <label>
-                                  <input type="checkbox" value=""> Option one. select more than one options<br>
-                                  <input type="checkbox" value=""> Option one. select more than one options<br>
-                                  <input type="checkbox" value=""> Option one. select more than one options<br>
-                                  <input type="checkbox" value=""> Option one. select more than one options<br>
-                                  <input type="checkbox" value=""> Option one. select more than one options<br>
-                                </label>
-                              </div>';
-                            $i1++;
-}?>
+                                <?php
+                                $cant=$i;
+                                while($cant<count($datos)){
+                                  $preg=Pregunta::obtenerPregunta($datos[$cant]);
+                                  echo ' <div class="checkbox">
+                                                   <label>'.($cant+1).'. '.$preg['ENUNCIADO'].'</label><br>
+                                                   <label>';
+                                                          $alter=Alternativa::obtenerAlt($datos[$cant]);
+                                                            for($y=0;$y<count($alter);$y++){
+                                                              echo '
+                                                            <input type="checkbox" name="alternativas" value="'.$alter[$y]['ITEM'].'"> '.$alter[$y]['ENUN_ALT'].'<br>';
+                                                            }
+                                                        echo '
+                                                  </label>
+                                         </div>';
+                                                  $cant++;
+                                                                      }
+                                                  ?>
                       </div>
+                      <div class="col-md-12 col-sm-12 ">
+                          <div class="form-group row">
 
+                            <label for="middle-name" class="col-form-label col-md-4 col-sm-4 label-align"><!--  --></label>
+                            <div class="col-md-3 col-sm-3">
+                             
+                              <button id="confirmarexamen" onclick=""type="submit" class="btn btn-round btn-success" >Iniciar Evaluación</button>
+                            </div>
+                          </div>
+                      </div>                                                  
+
+                  </form>
+                  </div>
                   <!--  -->
                   </div>
                 </div>
@@ -95,7 +125,7 @@ while($i1<=20){
         <?php require RUTA_APP . '/view/inc/footer.php' ?>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- jQuery -->
     <script src="../../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -107,5 +137,12 @@ while($i1<=20){
     
     <!-- Custom Theme Scripts -->
     <script src="../../build/js/custom.min.js"></script>
+<script src="../../js/prueba.js"></script>
+<script type="text/javascript">
+
+function stopDefAction(evt) {
+  evt.preventDefault();
+}
+</script>
   </body>
 </html>
