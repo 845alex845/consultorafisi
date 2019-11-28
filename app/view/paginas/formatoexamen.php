@@ -50,7 +50,8 @@
                       <h1>PASO 4 <?php echo $datos2['codexa'] ?></h1>
                     </div>
                   <div class="col-md-9 col-sm-9 col-xs-9">
-                  <form class="form-horizontal form-label-left" method="POST" action="../../EvaluacionController/programarExamen/<?php echo $datos2['codexa']?>"><!-- hemos cambiado codcurso -->
+                  <!-- CAMBIAR EN EL ACTION DE ACUERDO AL USUARIO; SI ES ALUMNO QUE  -->
+                  <form class="form-horizontal form-label-left"  method="POST" action="../../ExamenController/cargarExamen/<?php echo $datos2['codexa']?>"  > <!-- hemos cambiado codcurso -->
 
                      <div class="clearfix"></div>
                       <div class="text-center w-100"><h2><?php echo $datos2['tipoexamen'] ?></h2></div>
@@ -73,7 +74,7 @@ while($i<$cant){
                                   for($z=0;$z<count($alter);$z++){
                                     
                                     echo '
-                                  <input type="checkbox" name="alternativas" value="'.$alter[$z]['ITEM'].'"> '.$alter[$z]['ENUN_ALT'].'<br>';
+                                  <input type="checkbox" name="alternativas[]" value="'.$alter[$z]['ITEM'].'"> '.$alter[$z]['ENUN_ALT'].'<br>';
                                   }
                               echo '
                               </label>
@@ -92,7 +93,7 @@ while($i<$cant){
                                                           $alter=Alternativa::obtenerAlt($datos[$cant]);
                                                             for($y=0;$y<count($alter);$y++){
                                                               echo '
-                                                            <input type="checkbox" name="alternativas" value="'.$alter[$y]['ITEM'].'"> '.$alter[$y]['ENUN_ALT'].'<br>';
+                                                            <input type="checkbox" name="alternativas[]" value="'.$alter[$y]['ITEM'].'"> '.$alter[$y]['ENUN_ALT'].'<br>';
                                                             }
                                                         echo '
                                                   </label>
@@ -107,7 +108,7 @@ while($i<$cant){
                             <label for="middle-name" class="col-form-label col-md-4 col-sm-4 label-align"><!--  --></label>
                             <div class="col-md-3 col-sm-3">
                              
-                              <button id="confirmarexamen" onclick=""type="submit" class="btn btn-round btn-success" >Iniciar Evaluación</button>
+                              <button id="confirmarexamen"  type="submit" class="btn btn-round btn-success" >Iniciar Evaluación</button>
                             </div>
                           </div>
                       </div>                                                  
@@ -138,11 +139,12 @@ while($i<$cant){
     <!-- Custom Theme Scripts -->
     <script src="../../build/js/custom.min.js"></script>
 <script src="../../js/prueba.js"></script>
-<script type="text/javascript">
+<!--  <script type="text/javascript">
 
 function stopDefAction(evt) {
   evt.preventDefault();
+
 }
-</script>
+</script>-->
   </body>
 </html>

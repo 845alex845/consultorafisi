@@ -11,10 +11,9 @@ Class ExamenController extends Controller{
 		//todo controlador debe cargar un metodo index
 		//obtener usuario
 		SESSION::init();
-		$datos =[
-			'titulo' => 'Bienvenidos a mi webMVC'
-		];
 
+		$datos2=$this->examenModelo->obtenerExamenes($_SESSION['usuario']);
+		$this->vista2('paginas/evaluaciones',$datos2);
 //	$this->vista('paginas/examen');
 	}
 	public function method($idcurso){
@@ -72,5 +71,14 @@ Class ExamenController extends Controller{
 		}
 
 	}
-
+	public function cargarExamen($codexamen){
+		SESSION::init();
+		if($_SERVER['REQUEST_METHOD']=='POST'){
+			$datos=[
+				'codexa'=>$codexamen,
+			];
+			$datos2=$this->examenModelo->obtenerExamenes($_SESSION['usuario']);
+			$this->vista2('paginas/evaluaciones',$datos,$datos2);
+		}
+	}
  }

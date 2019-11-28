@@ -26,6 +26,13 @@
  */
 
 echo $datos['codexa']."<br>"; 
+echo "mis alternativas son <br>";
+echo count($datos2);
+$i=0;
+while($i<count($datos2)){
+echo $datos2[$i];
+$i++;
+}
 /*echo $datos[0]."<br>";
 echo $datos[1]."<br>";
 echo $datos[2]."<br>";

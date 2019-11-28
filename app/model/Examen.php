@@ -26,5 +26,20 @@ class Examen{
       $scar = oci_fetch_assoc($prepare);
       return $scar; 
     }
+    public function crearExamen($codexamen,$idpregunta,$puntos){
+      $sql="INSERT INTO EXAMEN_PREGUNTAS VALUES (".$codexamen.",".$idpregunta.","."$puntos)";
+      $conn=oci_connect("consultora","consultora");
+      $prepare=oci_parse($conn,$sql);
+      oci_execute($prepare);
+      return true;
+    }
+    public function obtenerExamenes($coddoc){
+      $sql="SELECT cod_examen ,tipo_examen,fecha_examen,cod_curso from  examen where cod_docente=$coddoc";
+      $conn = oci_connect('consultora', 'consultora');
+      $stid = oci_parse($conn, $sql);
+      oci_execute($stid);
+      $nrows = oci_fetch_all($stid, $res, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+      return $res;
+    }
 }
 ?>

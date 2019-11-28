@@ -48,16 +48,26 @@ Class EvaluacionController extends Controller{
 				'codexa'=>$codexam,
 				'tipoexamen'=>$datoexamen['TIPO_EXAMEN'],
 			];
-		//	$datos3=$this->alternativaModelo->obtenerAlt($datos);//preguntas
+
+			//$puntos=bcdiv(20,count($datos),2);
+			$puntos=2;
+			$ind=0;
+			while($ind<count($datos)){
+				$this->examenModelo->crearExamen($datos2['codexa'],$datos[$ind],$puntos);
+				$ind++;
+			}
 			$this->vista2('paginas/formatoexamen',$datos,$datos2);
+
 	}
 	public function programarExamen($codexam){
 		//$datos=$codexam;
+		$misalt=$_POST['alternativas'];
+		$datos2=$misalt;
 		$datos=[
 			'codexa'=> $codexam,
 		];
 
-		$this->vista('paginas/gaa',$datos);
+		$this->vista2('paginas/gaa',$datos,$datos2);
 	}
 
  }
