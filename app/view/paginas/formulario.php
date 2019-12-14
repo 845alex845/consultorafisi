@@ -52,7 +52,7 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">CODIGO: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input id="name" disabled="disabled" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name"  value="545" required="required" type="text">
+                          <input id="name" disabled="disabled" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name"  value="<?php echo $datos['CODIGO']?>" required="required" type="text">
                         </div>
                       </div>
                       <!--NOMBRE
@@ -61,7 +61,7 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">NOMBRE: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name"  required="required" type="text" readonly>
+                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" value="<?php echo $datos['NOM_USUARIO']?>" required="required" type="text" readonly>
                         </div>
                       </div>
                       <!--APE_PAT
@@ -70,7 +70,7 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">APELLIDO PATERNO: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name"  required="required" type="text" readonly>
+                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" value="<?php echo $datos['APE_PAT']?>" required="required" type="text" readonly>
                         </div>
                       </div>
                       <!--APE_MAT
@@ -79,7 +79,7 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">APELLIDO MATERNO: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name"  required="required" type="text" readonly>
+                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" value="<?php echo $datos['APE_MAT']?>" required="required" type="text" readonly>
                         </div>
                       </div>
                       <!--TIPO DE DOCUMENTO
@@ -88,25 +88,25 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">TIPO DOCUMENTO: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name"  required="required" type="text">
+                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" value="<?php echo $datos['TIPO_DOC']?>" required="required" type="text">
                         </div>
                       </div>
                       <!--NRO DE DOCUMENTO
                       8 digitos-->                       
                       <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="email">NRO. DOCUMENTO <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" >NRO. DOCUMENTO <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input type="email" id="email" name="email" required="required" class="form-control" readonly>
+                          <input  id="email" name="email" required="required" value="<?php echo $datos['NRO_DOC']?>" class="form-control" readonly>
                         </div>
                       </div>
                       <!--TELEFONO
                       9digitos-->                       
                       <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="email">TELEFONO <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" >TELEFONO <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control">
+                          <input  id="email2" name="confirm_email" data-validate-linked="email" required="required" value="<?php echo $datos['TELEFONO']?>" class="form-control">
                         </div>
                       </div>
                       <!--CELULAR
@@ -115,16 +115,16 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="number">CELULAR <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100" class="form-control">
+                          <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100" value="<?php echo $datos['CELULAR']?>" class="form-control">
                         </div>
                       </div>
                       <!--EMAIL
                       40byte-->                       
                       <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" >EMAIL: <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="email" >EMAIL: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input type="url" id="website" name="website label-align" required="required" placeholder="www.website.com" class="form-control">
+                          <input type="email" id="website" name="website label-align" required="required"  value="<?php echo $datos['EMAIL']?>" class="form-control">
                         </div>
                       </div>
                       <!--GENERO
@@ -133,7 +133,7 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="occupation">GENERO <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input id="occupation" type="text" name="occupation" data-validate-length-range="5,20" class="optional form-control">
+                          <input id="occupation" type="text" name="occupation" data-validate-length-range="5,20"  value="<?php echo $datos['GENERO']?>" class="optional form-control">
                         </div>
                       </div>
                       <!--FOTO
@@ -149,7 +149,7 @@
                       <div class="item form-group">
                         <label  class="col-form-label col-md-3 col-sm-3 label-align ">FECHA NACIMIENTO</label>
                         <div class="col-md-6 col-sm-6">
-                          <input id="fechanacimiento" type="text" name="fechanacimiento"  class="form-control" required="required" readonly>
+                          <input id="fechanacimiento" type="text" name="fechanacimiento"  class="form-control"  value="<?php echo $datos['FECHA_NAC']?>"  required="required" readonly>
                         </div>
                       </div>
 
@@ -159,7 +159,7 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="textarea">DIRECCION: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <textarea id="direccion" required="required" name="direccion" class="form-control"></textarea>
+                          <textarea id="direccion" required="required" name="direccion"  value="<?php echo $datos['DIRECCION']?>" class="form-control"></textarea>
                         </div>
                       </div>
                       
@@ -169,10 +169,37 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="telephone">ESTADO CIVIL:<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6">
-                          <input type="tel" id="telephone" name="phone" required="required" data-validate-length-range="8,20" class="form-control">
+                          <input type="tel" id="telephone" name="phone" required="required"  value="<?php echo $datos['ESTADO_CIVIL']?>"  data-validate-length-range="8,20" class="form-control">
                         </div>
                       </div>
-
+                      <?php
+                      if($rol=='docente'){
+                      echo '<div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">ESPECIALIDAD: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6">
+                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" value="'.$datos['ESPECIALIDAD'].'" required="required" type="text" readonly>
+                        </div>
+                      </div>';
+                      }
+  if($rol=='alumno'){
+  echo '
+                      <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">CICLO ACTUAL: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6">
+                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" value="'.$datos['CICLO_ACTUAL'].'" required="required" type="text" readonly>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">SITUACION ACADEMICA: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6">
+                          <input id="name" class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" value="'.$datos['SITUACION_ACADEMICA'].'" required="required" type="text" readonly>
+                        </div>
+                      </div>
+                      ';}
+?>
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 offset-md-3">

@@ -8,7 +8,9 @@ $scar = oci_fetch_assoc($prepare);
 if(!isset($iduser)){
   header("Location: login3.php ");
 }
-if($scar['CODIGO'] < 16000000 ){
+if($scar['CODIGO']==99999999){
+$rol ="administrador";
+}else if($scar['CODIGO'] < 12000000 ){
   $rol ="docente";
 }else{
   $rol="alumno";
@@ -54,7 +56,7 @@ if($scar['CODIGO'] < 16000000 ){
                 <img src="images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Bienvenido <?php echo $rol."<br>". $scar['NOM_USUARIO'].' '.$scar['APE_PAT'].' '.$scar['APE_MAT'];?></span>
+                <span>Bienvenido <?php echo $rol."<br>". $scar['NOMBRE'].' '.$scar['APE_PAT'].' '.$scar['APE_MAT'];?></span>
 
                 
               </div>
@@ -68,22 +70,49 @@ if($scar['CODIGO'] < 16000000 ){
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
+<!-- Cambiar el controlador docentecontroler por usuario controler -->
+                <?php
+                echo'
                   <li><a><i class="fa fa-edit"></i> Mi información <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="DocenteController">Form Validation</a></li>
+                  
+                     <li><a href="DocenteController">Form Validation</a></li>
+                
                     </ul>
-                  </li>
-                  <li><a><i class="fa fa-table"></i> Mis cursos <span class="fa fa-chevron-down"></span></a>
+                  </li>';
+                  if($rol=='alumno' || $rol=='docente'){
+                    echo '<li><a><i class="fa fa-table"></i> Mis cursos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="CursoController">Ver Cursos</a></li>
-
                     </ul>
-                  </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> Mis Evaluaciones<span class="fa fa-chevron-down"></span></a>
+                  </li>';
+                  }
+                  if($rol=='docente'){
+                    echo '<li><a><i class="fa fa-bar-chart-o"></i> Mis Evaluaciones<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="ExamenController">Examenes</a></li>
                     </ul>
-                  </li>     
+                    </li>';
+                  }
+                  if($rol=='alumno'){
+                    echo '<li><a><i class="fa fa-bar-chart-o"></i> Mis Notas<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="NotasController">Examenes</a></li>
+                    </ul>
+                    </li>';
+                  }
+                  if($rol=='administrador'){
+                    //controladore para la gestion de alumno y docente
+                    if($rol=='docente'){
+                      echo '<li><a><i class="fa fa-bar-chart-o"></i> Gestión de Usuarios<span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                        <li><a href="ExamenController">Examenes</a></li>
+                      </ul>
+                      </li>';
+                    }
+                  }
+
+                ?>
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>

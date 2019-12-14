@@ -12,7 +12,13 @@ Class CursoController extends Controller{
 		//obtener usuario
 		//aqui jala los datos de los cursos :v
 		SESSION::init();
-		$curso=$this->cursoModelo->obtenerCursos($_SESSION['usuario']);
+		if($_SESSION['usuario']>12000000 && $_SESSION['usuario']<99999999){
+			//alumnos
+			$curso=$this->cursoModelo->obtenerCursosa($_SESSION['usuario']);
+		}else{
+			$curso=$this->cursoModelo->obtenerCursosd($_SESSION['usuario']);
+		}
+		
 
 		$datos=$curso;
 	

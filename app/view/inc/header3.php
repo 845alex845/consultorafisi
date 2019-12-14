@@ -51,7 +51,7 @@ if($scar['CODIGO'] < 16000000 ){
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="../images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Bienvenido <?php echo $rol."<br>". $scar['NOM_USUARIO'].' '.$scar['APE_PAT'].' '.$scar['APE_MAT'];?></span>

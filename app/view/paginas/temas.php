@@ -11,7 +11,26 @@
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
-                  <a class="btn btn-primary" href="../../ExamenController/method/<?php echo $datos['id']?>" role="button">Crear Examen</a>
+                  <?php 
+                  if ($rol=='docente'){
+                    ?>
+                    <a class="btn btn-primary" href="../../ExamenController/method/<?php echo $datos["id"]?>" role="button">Crear Examen</a>
+                    <?php
+                  }else{
+                    $comp=Examen::comprobarExamen($datos['id']);//se comprueba si el examen o practica esta inactivo para resolverlo
+                    if(count($comp)>0){
+                    //esta parte es para el estudiante
+                    echo'
+                    <a class="btn btn-primary" href="../../ExamenController/cargarFormato/'.$comp[0]['COD_EXAMEN'].'" role="button">Dar Examen</a>';
+
+                    ?>
+                  <?php
+                    }else{
+                      echo 'no hay examen para dar';
+                    }
+                }
+                  ?>                  
+
                   </div>
                 </div>
               </div>

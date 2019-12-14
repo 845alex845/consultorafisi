@@ -8,11 +8,13 @@ $scar = oci_fetch_assoc($prepare);
 if(!isset($iduser)){
   header("Location: login3.php ");
 }
-if($scar['CODIGO'] < 16000000 ){
-  $rol ="docente";
-}else{
-  $rol="alumno";
-}
+if($scar['CODIGO']==99999999){
+  $rol ="administrador";
+  }else if($scar['CODIGO'] < 12000000 ){
+    $rol ="docente";
+  }else{
+    $rol="alumno";
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

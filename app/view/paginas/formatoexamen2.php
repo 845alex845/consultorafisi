@@ -47,50 +47,51 @@
                   <div class="x_content">
                      <!--  -->
                      <div class="col-md-3 col-sm-3 col-xs-3">
-                      <h1>PASO 4 <?php echo $datos2['codexa'] ?></h1>
+                      <h1></h1>
                     </div>
                   <div class="col-md-9 col-sm-9 col-xs-9">
                   <!-- CAMBIAR EN EL ACTION DE ACUERDO AL USUARIO; SI ES ALUMNO QUE  -->
-                  <form class="form-horizontal form-label-left"  method="POST" action="../../ExamenController"  > <!-- hemos cambiado codcurso -->
+                  <form class="form-horizontal form-label-left"  method="POST" action="../../ExamenController/evaluar/<?php echo $datos2['codexa']?>"  > <!-- hemos cambiado codcurso -->
 
                      <div class="clearfix"></div>
                       <div class="text-center w-100"><h2><?php echo $datos2['tipoexamen'] ?></h2></div>
 
                       <div class="col-md-6 col-sm-6 ">
-<?php
-$i=0;
-$cant=((count($datos))/2);
-//el while está recorriendo las preguntas
-//datos codigo de preguntas
-//datos 2 variables aux
-//datos 3 para el enunciado y mostrar alternativas
-while($i<$cant){
-  $preg=Pregunta::obtenerPregunta($datos[$i]);
-                       echo ' <div class="checkbox">
-                                <label>'.($i+1).". ".$preg['ENUNCIADO'].'</label><br>
-                                <label>
-                                ';
-                                $alter=Alternativa::obtenerAlt($datos[$i]);
-                                  for($z=0;$z<count($alter);$z++){
-                                    
-                                    echo '
-                                  <input type="checkbox" name="alternativas[]" value="'.$alter[$z]['ITEM'].'"> '.$alter[$z]['ENUN_ALT'].'<br>';
-                                  }
-                              echo '
-                              </label>
-                              </div>';
-                            $i++;
-}?>
+                      <?php
+                        $i=0;
+                        $cant=((count($datos))/2);
+                        //el while está recorriendo las preguntas
+                        //datos codigo de preguntas
+                        //datos 2 variables aux
+                        //datos 3 para el enunciado y mostrar alternativas
+                        while($i<$cant){
+                        $preg=Pregunta::obtenerPregunta($datos[$i]['ID_PREGUNTA']);
+                                            echo ' <div class="checkbox">
+                                                        <label>'.($i+1).". ".$preg['ENUNCIADO'].'</label><br>
+                                                        <label>
+                                                        ';
+                                                        $alter=Alternativa::obtenerAlt($datos[$i]['ID_PREGUNTA']);
+                                                        for($z=0;$z<count($alter);$z++){
+                                                            
+                                                            echo '
+                                                        <input type="checkbox" name="alternativas[]" value="'.$alter[$z]['ITEM'].'"> '.$alter[$z]['ENUN_ALT'].'<br>';
+                                                        }
+                                                    echo '
+                                                    </label>
+                                                    </div>';
+                                                    $i++;
+                        }?>
+                        
                       </div>
                       <div class="col-md-6 col-sm-6 ">
-                                <?php
+                            <?php
                                 $cant=$i;
                                 while($cant<count($datos)){
-                                  $preg=Pregunta::obtenerPregunta($datos[$cant]);
+                                  $preg=Pregunta::obtenerPregunta($datos[$cant]['ID_PREGUNTA']);
                                   echo ' <div class="checkbox">
                                                    <label>'.($cant+1).'. '.$preg['ENUNCIADO'].'</label><br>
                                                    <label>';
-                                                          $alter=Alternativa::obtenerAlt($datos[$cant]);
+                                                          $alter=Alternativa::obtenerAlt($datos[$cant]['ID_PREGUNTA']);
                                                             for($y=0;$y<count($alter);$y++){
                                                               echo '
                                                             <input type="checkbox" name="alternativas[]" value="'.$alter[$y]['ITEM'].'"> '.$alter[$y]['ENUN_ALT'].'<br>';
@@ -100,15 +101,20 @@ while($i<$cant){
                                          </div>';
                                                   $cant++;
                                                                       }
-                                                  ?>
+                             ?>      
                       </div>
                       <div class="col-md-12 col-sm-12 ">
                           <div class="form-group row">
 
                             <label for="middle-name" class="col-form-label col-md-4 col-sm-4 label-align"><!--  --></label>
                             <div class="col-md-3 col-sm-3">
-                             
-                              <button id="confirmarexamen"  type="submit" class="btn btn-round btn-success" >Iniciar Evaluación</button>
+                            <?php
+                             if($rol=='docente'){
+                                echo '<button id="confirmarexamen"  type="submit" class="btn btn-round btn-success" >REGRESAR</button>';
+                             } else{
+                              echo '<button id="confirmarexamen"  type="submit" class="btn btn-round btn-success" >TERMINAR EXAMEN</button>';
+
+                             }   ?>
                             </div>
                           </div>
                       </div>                                                  

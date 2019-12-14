@@ -1,60 +1,14 @@
 <?php
 class Administrador{
-    private $db;
-    public function __construct(){
-        $this->db =new Base;
-    }
-    public function obtenerAdmin(){
-        $this->db->query('SELECT * FROM administrador');
 
-        $resultados =$this->db->registros();
-        return $resultados;
-    }
-    public function agregarAdmin($datos){
-        $sql2="INSERT INTO administador (nombre, email, telefono)  VALUES (:nombre, :email, :telefono)";
-        $this->db->query($sql2);
-        //vinculando los valores
-        $this->db->bind(':nombre', $datos['nombre']);
-        $this->db->bind(':email', $datos['email']);
-        $this->db->bind(':telefono', $datos['telefono']);
-
-        //Ejecutar
-        if($this->db->execute()){
-            return true;
-        }else{
-            return false;
+    public function obtenerAdmin($id){
+        //$sql="SELECT * from docente where cod_docente=$id";
+            $sql="select u.codigo , u.nom_usuario, u.clave , u.nombre, u.ape_pat , u.ape_mat, u.tipo_doc, u.nro_doc , u.telefono , u.celular, u.email, u.genero , u.foto, u.fecha_nac
+            ,u.direccion, u.estado_civil, d.especialidad from usuario u join docente d on d.CODIGO=u.CODIGO WHERE u.codigo=$id ";
+            $conn=oci_connect("consultora","consultora");
+            $prepare=oci_parse($conn,$sql);
+            oci_execute($prepare);
+            $scar = oci_fetch_assoc($prepare);
+            return $scar; 
         }
-    }
-    public function obtenerAdminId($id){
-       $this->db->query('SELECT * FROM administrador WHERE id_admin =:id');
-       $this->db->bind(':id',$id);
-
-       $fila =$this->db->registro();
-       return $fila;
-    }
-    public function actualizarAdmin($datos){
-        $sql3="UPDATE administrador SET nombre = :nombre, email = :email, telefono = :telefono WHERE id_admin = :id";
-        $this->db->query($sql3);
-        //vincular valores
-        $this->db->bind(':id',$datos['id_admin']);
-        $this->db->bind(':nombre',$datos['nombre']);
-        $this->db->bind(':email',$datos['email']);
-        $this->db->bind(':telefono',$datos['telefono']);
-        //ejecutar
-        if($this->db->execute()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    public function borrarAdmin($datos){
-        $sql4="DELETE FROM administrador WHERE id_admin = :id ";
-        $this->db->query($sql4);
-        $this->db->bind(':id',$datos['id_admin']);
-        if($this->db->execute()){
-           return true;
-       }else{
-           return false;
-       }
-    }
 }

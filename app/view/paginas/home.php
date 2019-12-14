@@ -48,7 +48,7 @@
       <script src="js/typed.js"></script>
             <script>
             var typed = new Typed('.typed-words', {
-            strings: ["Explore su aula virtual"," Gaaaaa"," Vas a caer chupetin :v"],
+            strings: ["Explore su aula virtual"," Proyecto de BD2 completado","contacte a SteamCodeMaster"],
             typeSpeed: 80,
             backSpeed: 80,
             backDelay: 4000,

@@ -9,7 +9,7 @@ class Docente {
 		//parent::__construct(); esto es cuando tenemos algo en el constructor del padre
 	}
 
-public function obtenerDocentes($id){
+public function obtenerDocente($id){
 //$sql="SELECT * from docente where cod_docente=$id";
 	$sql="select u.codigo , u.nom_usuario, u.clave , u.nombre, u.ape_pat , u.ape_mat, u.tipo_doc, u.nro_doc , u.telefono , u.celular, u.email, u.genero , u.foto, u.fecha_nac
 	,u.direccion, u.estado_civil, d.especialidad from usuario u join docente d on d.CODIGO=u.CODIGO WHERE u.codigo=$id ";

@@ -3,6 +3,7 @@ Class TemasController extends Controller{
 	public function __construct(){
 		$this->cursoModelo=$this->modelo('Curso');
 		$this->temaModelo=$this->modelo('Temas');	
+		$this->examenModelo=$this->modelo('Examen');
 	}
 	public function index(){
 		//todo controlador debe cargar un metodo index
@@ -16,6 +17,7 @@ Class TemasController extends Controller{
 	public function method($id){
 		SESSION::init();
 		$cursos=$this->cursoModelo->obtenerCursos1($id);
+		
 		$temas=$this->temaModelo->obtenerTemas($id);
 			$datos=[
 				'id' => $id,
@@ -26,6 +28,7 @@ Class TemasController extends Controller{
 			//require_once '../app/view/paginas/temas.php';
 			$this->vista2('paginas/temas',$datos,$datos2);
 	}
-	
+
+
 
  }

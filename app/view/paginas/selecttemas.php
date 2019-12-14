@@ -47,10 +47,14 @@
                   <div class="col-md-3 col-sm-3 col-xs-3">
                       <h1>PASO 2</h1>
                   </div>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
-                  <form class="form-horizontal form-label-left" method="POST" action="../../EvaluacionController/method/<?php echo $datos['codexa'].$datos['idcurso']?>"><!-- hemos cambiado codcurso -->
+                  <?php 
+  $codexamen=Examen::obtenerCodigo($datos['usuadoc']);
 
-                  <h2 class="StepTitle">Temas que se incluirán en el examen <?php echo $datos['codexa'] ?></h2>
+  ?>
+                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <form class="form-horizontal form-label-left" method="POST" action="../../EvaluacionController/method/<?php echo $codexamen['COD_EXAMEN'].$datos['idcurso']?>"><!-- hemos cambiado codcurso -->
+ 
+                  <h2 class="StepTitle">Temas que se incluirán en el examen <?php echo $codexamen['COD_EXAMEN'] ?></h2>
                         <div class="clearfix"></div>
                      
 

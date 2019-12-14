@@ -22,9 +22,18 @@ class Curso{
         $scar = oci_fetch_object($prepare);
         return $scar; 
     }
-    public function obtenerCursos($coduser){
+    public function obtenerCursosd($coduser){
         $sql="SELECT c.cod_curso as COD_CURSO, c.nom_curso, c.cod_esc,c.num_ciclo,c.num_creditaje,c.plan_estudio,c.horas , d.codigo ,d.especialidad 
         from curso c join docente_curso dc on c.cod_curso=dc.cod_curso join docente d on d.codigo=dc.cod_docente where d.codigo=$coduser";
+        $conn = oci_connect('consultora', 'consultora');
+        $stid = oci_parse($conn, $sql);
+        oci_execute($stid);
+        $nrows = oci_fetch_all($stid, $res, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+        return $res;
+    }
+    public function obtenerCursosa($coduser){
+        $sql="SELECT c.cod_curso as COD_CURSO, c.nom_curso, c.cod_esc,c.num_ciclo,c.num_creditaje,c.plan_estudio,c.horas , a.codigo , a.ciclo_actual, a.situacion_academica
+        from curso c join alumno_cursos ac on c.cod_curso=ac.cod_curso join alumno a on a.codigo=ac.cod_alumno where a.codigo=$coduser";
         $conn = oci_connect('consultora', 'consultora');
         $stid = oci_parse($conn, $sql);
         oci_execute($stid);
